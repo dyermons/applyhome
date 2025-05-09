@@ -74,9 +74,9 @@ def run_script():
     # 오늘 요일 체크
     today = datetime.date.today()
     print(f"[실행됨] 호출 시간: {today}, 요일: {today.weekday()}")
-    # if today.weekday() != 0:  # 0 = 월요일
-    #     print("➡ 월요일 아님. 실행 안 함")
-    #     return "오늘은 월요일이 아니에요! 실행 안 함 😊"
+    if today.weekday() != 0:  # 0 = 월요일
+        print("➡ 월요일 아님. 실행 안 함")
+        return "오늘은 월요일이 아니에요! 실행 안 함 😊"
 
     print("✅ 월요일이라서 실행 시작!")
     TELEGRAM_TOKEN = os.environ['TELEGRAM_TOKEN']
